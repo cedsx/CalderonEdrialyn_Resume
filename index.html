@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edrialyn S. Calderon – Resume</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #d0d0d0;
+      font-family: Calibri, 'Segoe UI', Arial, sans-serif;
+      font-size: 13.5px;
+      color: #000;
+    }
+
+    /* Download button */
+    .download-bar {
+      background: #222;
+      padding: 10px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 99;
+    }
+
+    .download-bar button {
+      background: #1a5276;
+      color: #fff;
+      border: none;
+      padding: 9px 28px;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+      letter-spacing: 0.3px;
+    }
+
+    .download-bar button:hover { background: #154360; }
+
+    /* A4-like white page */
+    .page {
+      background: #fff;
+      width: 100%;
+      max-width: 800px;
+      margin: 24px auto;
+      padding: 40px 48px 48px 48px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+    }
+
+    /* ── TOP HEADER ── */
+    .top-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+
+    .name-block h1 {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+
+    .name-block .contact-line {
+      font-size: 13px;
+      line-height: 1.75;
+    }
+
+    .photo-box {
+      width: 105px;
+      height: 118px;
+      border: 1.5px solid #444;
+      flex-shrink: 0;
+      margin-left: 16px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f2f2f2;
+    }
+
+    .photo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .photo-note {
+      font-size: 10.5px;
+      color: #777;
+      text-align: center;
+      padding: 6px;
+      line-height: 1.4;
+    }
+
+    /* ── SECTION ── */
+    .section { margin-bottom: 14px; }
+
+    .section-title {
+      font-size: 13.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2px;
+      padding-bottom: 3px;
+      border-bottom: 1.5px solid #000;
+      margin-bottom: 8px;
+    }
+
+    /* ── OBJECTIVES ── */
+    .objectives p {
+      text-align: justify;
+      line-height: 1.65;
+      text-indent: 36px;
+    }
+
+    /* ── WORK EXPERIENCE ── */
+    .exp-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .exp-title { font-weight: 700; font-size: 13.5px; }
+    .exp-date  { font-style: italic; font-size: 13px; white-space: nowrap; }
+
+    .exp-bullets {
+      list-style: disc;
+      padding-left: 34px;
+      margin-top: 5px;
+    }
+
+    .exp-bullets li {
+      font-style: italic;
+      font-size: 13px;
+      line-height: 1.65;
+      margin-bottom: 2px;
+    }
+
+    /* ── EDUCATION ── */
+    .edu-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 9px;
+    }
+
+    .edu-left .school-name { font-weight: 700; font-size: 13.5px; }
+    .edu-left .degree      { font-style: italic; font-size: 13px; }
+
+    .edu-right {
+      text-align: right;
+      font-style: italic;
+      font-size: 13px;
+      white-space: nowrap;
+      margin-left: 12px;
+      line-height: 1.65;
+      flex-shrink: 0;
+    }
+
+    /* ── SEMINARS ── */
+    .seminar-item { margin-bottom: 10px; }
+
+    .seminar-name   { font-weight: 700; font-size: 13.5px; }
+    .seminar-detail { font-style: italic; font-size: 13px; line-height: 1.55; }
+
+    /* ── SKILLS ── */
+    .skills-block p {
+      font-size: 13.5px;
+      line-height: 1.7;
+      text-align: justify;
+      margin-bottom: 8px;
+    }
+
+    /* ── PRINT ── */
+    @media print {
+      body { background: #fff; }
+      .download-bar { display: none !important; }
+      .page {
+        margin: 0;
+        padding: 30px 36px;
+        box-shadow: none;
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 580px) {
+      .page { padding: 20px 16px; margin: 0; box-shadow: none; }
+
+      .top-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 14px;
+      }
+
+      .photo-box { margin: 0; }
+      .name-block { order: 2; }
+      .photo-box  { order: 1; }
+
+      .exp-row { flex-direction: column; gap: 1px; }
+
+      .edu-item { flex-direction: column; gap: 2px; }
+      .edu-right { text-align: left; margin-left: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="download-bar">
+    <button onclick="window.print()">⬇ Download as PDF</button>
+  </div>
+
+  <div class="page">
+
+    <!-- HEADER -->
+    <div class="top-header">
+      <div class="name-block">
+        <h1>EDRIALYN S. CALDERON</h1>
+        <div class="contact-line">
+          Tinejero, Pulilan, Bulacan<br>
+          Mobile No. 0956-279-8299<br>
+          E-mail Address: lenlencalderon12@gmail.com
+        </div>
+      </div>
+      <div class="photo-box">
+        <!--
+          PARA MAGLAGAY NG LARAWAN MO:
+          1. I-save ang iyong photo bilang "photo.jpg"
+          2. I-upload sa GitHub kasama ang index.html
+          3. Baguhin ang linya sa baba para maging:
+             <img src="photo.jpg" alt="Photo">
+        -->
+        <div class="photo-note">I-upload ang<br><strong>photo.jpg</strong><br>sa GitHub</div>
+      </div>
+    </div>
+
+    <!-- OBJECTIVES -->
+    <div class="section">
+      <div class="section-title">OBJECTIVES</div>
+      <div class="objectives">
+        <p>To obtain a full-time position where I can utilize my computer literacy and basic technical skills, contribute to the organization's operations, and continuously develop my knowledge and abilities in a professional work environment.</p>
+      </div>
+    </div>
+
+    <!-- WORK EXPERIENCE -->
+    <div class="section">
+      <div class="section-title">WORK EXPERIENCE</div>
+      <div class="exp-row">
+        <span class="exp-title">INTERN | MUNICIPAL GOVERNMENT OF SAN ILDEFONSO BULACAN</span>
+        <span class="exp-date">Jan 2026 - April 2026</span>
+      </div>
+      <ul class="exp-bullets">
+        <li>Assisted in administrative and clerical tasks within the office</li>
+        <li>Organized, edited, and processed official documents</li>
+        <li>Supported data encoding, filing, and record management</li>
+        <li>Helped in preparing and formatting reports and other office materials</li>
+      </ul>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="section">
+      <div class="section-title">EDUCATION</div>
+
+      <div class="edu-item">
+        <div class="edu-left">
+          <div class="school-name">DALUBHASAANG POLITEKNIKO NG LUNGSOD NG BALIWAG</div>
+          <div class="degree">Bachelor of Science in Information Technology</div>
+        </div>
+        <div class="edu-right">Baliwag City, Bulacan<br>2022 - Present</div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-left">
+          <div class="school-name">STA. PEREGRINA HIGH SCHOOL</div>
+          <div class="degree">Senior High School – Science, Technology, Engineering, and Mathematics</div>
+        </div>
+        <div class="edu-right">Pulilan, Bulacan<br>2020 - 2022</div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-left">
+          <div class="school-name">STA. PEREGRINA HIGH SCHOOL</div>
+          <div class="degree">Junior High School</div>
+        </div>
+        <div class="edu-right">Pulilan, Bulacan<br>2016 - 2020</div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-left">
+          <div class="school-name">BALATONG A ELEMENTARY SCHOOL</div>
+          <div class="degree">Elementary</div>
+        </div>
+        <div class="edu-right">Pulilan, Bulacan<br>2009 - 2016</div>
+      </div>
+
+    </div>
+
+    <!-- SEMINARS AND CERTIFICATION -->
+    <div class="section">
+      <div class="section-title">SEMINARS AND CERTIFICATION</div>
+
+      <div class="seminar-item">
+        <div class="seminar-name">COMPUTER LITERACY PROGRAM (28 HOURS)</div>
+        <div class="seminar-detail">
+          Belsam System Technology Training Services &amp; Next Generation Technological College<br>
+          April 7, 2019
+        </div>
+      </div>
+
+      <div class="seminar-item">
+        <div class="seminar-name">REGIONAL ASSEMBLY ON INFORMATION TECHNOLOGY EDUCATION (RAITE 2024)</div>
+        <div class="seminar-detail">
+          Theme: "Navigating the AI-Driven Future: Education, Ethics and Innovation"<br>
+          Philippine Society of Information Technology Educators (PSITE) – Central Luzon<br>
+          Angeles University Foundation, November 4, 2024
+        </div>
+      </div>
+
+      <div class="seminar-item">
+        <div class="seminar-name">AWS STUDENT COMMUNITY DAY – NORTH 2025</div>
+        <div class="seminar-detail">
+          Hosted by AWS Cloud Clubs<br>
+          National University – Baliwag, Central Luzon<br>
+          November 29, 2025
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SKILLS -->
+    <div class="section">
+      <div class="section-title">SKILLS</div>
+      <div class="skills-block">
+        <p><strong>Technical Skills:</strong> Proficient in Microsoft Word, Excel, and PowerPoint; data encoding and spreadsheet management; document preparation and formatting; basic computer troubleshooting; file organization and records management; design using Canva and Figma.</p>
+        <p><strong>Soft Skills:</strong> Detail-oriented, adaptable, fast learner, able to work under pressure, strong time management, effective communication skills, teamwork and collaboration, and good organizational skills.</p>
+      </div>
+    </div>
+
+  </div><!-- /page -->
+
+</body>
+</html>
